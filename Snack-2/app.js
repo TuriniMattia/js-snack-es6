@@ -61,12 +61,22 @@ for(let i = 0; i < students.length; i++){
 console.log(formattedStudents)
 
 const topStupends = []
+const bestStudent = []
+
 
 for (let i = 0; i < formattedStudents.length; i++ ){
     const student = formattedStudents[i]
 
     if(student.grades > 70){
+        bestStudent.push(student)
+    }
+
+    if(student.grades > 70 && student.id > 120){
         topStupends.push(student)
     }
+
+
 }
+
 console.log(topStupends)
+console.log(bestStudent)
