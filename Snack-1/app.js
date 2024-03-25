@@ -21,12 +21,21 @@ function toObject(name, order , tableName){
     }
 }
 
-const guestsObject =[]
+// const guestsObject =[]
 
-for (let i = 0; i < guests.length; i++ ){
-    const guestName = guests[i]
-    const order = i + 1
-    const guestsObject = toObject(guestName, order, tableName)
-    guestsObject.push(guestsObject)
-}
+// for (let i = 0; i < guests.length; i++ ){
+//     const guestName = guests[i]
+//     const order = i + 1
+//     const guestsObject = toObject(guestName, order, tableName)
+//     guestsObject.push(guestsObject)
+// }
+// console.log(guestsObject)
+
+const guestsObject = guests.map((guestName, i) =>{
+     const order = i + 1
+     const guestsObject = toObject(guestName, order, tableName)
+     return guestsObject
+
+} )
+
 console.log(guestsObject)
