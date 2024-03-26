@@ -5,8 +5,51 @@
 // Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
 // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 
-    const footballTeam = []
-    for(i = 0; i < 6; i++){
-        footballTeam[i] = { name : `team${i + 1}`, goal : parseInt(Math.random() * 10), foul : parseInt(Math.random() * 10), }
-    }
+    const footballTeam = [
+        {
+            name : "juventus",
+            goal : 0,
+            fouls : 0,
+        },
+        {
+            name : "milan",
+            goal : 0,
+            fouls : 0,
+        },
+        {
+            name : "roma",
+            goal : 0,
+            fouls : 0,
+        },
+        {
+            name : "inter",
+            goal : 0,
+            fouls : 0,
+        },
+        {
+            name : "atalanta",
+            goal : 0,
+            fouls : 0,
+        },
+    ]
     console.log(footballTeam)
+
+    function random(max){
+        return Math.floor(Math.random() * max) + 1
+    }
+
+    console.log(random(10))
+
+    footballTeam.forEach(team => {
+        team.goal = random(50)
+        team.fouls = random(50)
+    })
+    console.log(footballTeam)
+
+
+    const messages = footballTeam.map((team) =>{
+        const { name, fouls} = team
+        return `La squadra ${team.name} ha subito ${team.fouls} falli`
+    })
+
+   console.log(messages)
